@@ -15,3 +15,4 @@ Appended by the Hermes orchestrator after every task (see
 | T-008 | rewrite | 1 | complete | src/main/java/com/demo/model/ShoppingCartItem.java |
 | T-009 | rewrite | 1 | complete | src/main/java/com/demo/model/ShoppingCart.java |
 | T-010 | rewrite | 1 | complete (already satisfied) | (Quarkus BOM provides removed JavaEE modules) |
+| T-011 | rewrite | 1 | complete | src/main/resources/application.properties |
