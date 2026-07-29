@@ -56,3 +56,5 @@ T-001: rewrite: 1 attempt: SUCCESS: ShoppingCartService.java interface preserved
 T-002: rewrite: 1 attempt: SUCCESS: CatalogService.java converted to REST client; pom.xml updated with REST client dependency  
 T-003: rewrite: 1 attempt: SUCCESS: AcceptanceEndpoint.java created with placeholder response
 
+
+T-004 | infer | 1 attempt | SUCCESS | ShoppingCartServiceImpl.java, ShippingService.java, PromoService.java
