@@ -9,3 +9,10 @@ epoch,stage,attempt,class,action
 1785349365,m5-evaluate,1,success,commit
 1785349539,m5-ship,0,pipeline_succeeded,coolstore-cart-service-v6-push-jd5nz
 1785349539,m5-ship,0,story_gate_pass,non-deploy story
+1785351128,T-004,1,success,commit
+1785351128,scope,0,later_story_class,src/main/java/com/demo/service/PromoService.java src/main/java/com/demo/service/ShippingService.java src/main/java/com/demo/service/ShoppingCartServiceImpl.java
+1785351135,T-005,0,already_complete,CATALOG_ENDPOINT
+1785351274,T-006,0,already_complete,absent:Port
+1785351506,m5-evaluate,1,success,commit
+1785351681,m5-ship,0,pipeline_succeeded,coolstore-cart-service-v6-push-rz29c
+1785351681,m5-ship,0,story_gate_pass,non-deploy story
