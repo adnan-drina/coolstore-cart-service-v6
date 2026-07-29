@@ -46,6 +46,8 @@ preserve:
   # Metrics conversion strategy: Micrometer to MicroProfile Metrics (MP Metrics)
   # quarkus-smallrye-metrics dependency added for future S03-S04 story use
   # Metrics annotations and instrumentation will be implemented in service conversion
+  # JAX-RS conversion strategy: Native JAX-RS (NOT spring-web extension) will be used
+  # @ApplicationScoped @Path resources will be implemented in S04 with constructor injection
 forbidden:
   - getMockProducts
   - "Fallback to mock"
