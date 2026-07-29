@@ -40,6 +40,9 @@ targetContract:
   normalizeBeforeDerive: true
 preserve:
   - CATALOG_ENDPOINT
+  # CDI conversion strategy: Native Quarkus CDI will be used instead of Spring DI
+  # Constructor injection pattern will be implemented in S03 for service classes
+  # No spring-di extension will be used in the target application
 forbidden:
   - getMockProducts
   - "Fallback to mock"
