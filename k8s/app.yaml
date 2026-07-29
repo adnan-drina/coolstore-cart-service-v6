@@ -1,0 +1,93 @@
+# Runtime for this project, applied by the shared pipeline's deploy task
+# after every green build (the task also pins the image to the platform's
+# resolved registry, so the default here is only a bootstrap value).
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: coolstore-cart-service-v6
+  labels:
+    app.kubernetes.io/name: coolstore-cart-service-v6
+    app.kubernetes.io/part-of: coolstore-cart-service-v6
+    app.openshift.io/runtime: quarkus
+    backstage.io/kubernetes-id: coolstore-cart-service-v6
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: coolstore-cart-service-v6
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: coolstore-cart-service-v6
+        app.kubernetes.io/part-of: coolstore-cart-service-v6
+        backstage.io/kubernetes-id: coolstore-cart-service-v6
+    spec:
+      imagePullSecrets:
+        - name: quay-pull-secret
+      containers:
+        - name: coolstore-cart-service-v6
+          # Bootstrap tag only — the deploy-app task pins each PipelineRun's
+          # immutable revision tag and sets IfNotPresent (V6 P4.1).
+          image: quay.io/rhoai3-coding-demo/coolstore-cart-service-v6:latest
+          imagePullPolicy: IfNotPresent
+          ports:
+            - name: http
+              containerPort: 8080
+              protocol: TCP
+          livenessProbe:
+            httpGet:
+              path: /q/health/live
+              port: http
+            initialDelaySeconds: 20
+            periodSeconds: 20
+            timeoutSeconds: 3
+          readinessProbe:
+            httpGet:
+              path: /q/health/ready
+              port: http
+            initialDelaySeconds: 10
+            periodSeconds: 10
+            timeoutSeconds: 3
+          resources:
+            requests:
+              cpu: 100m
+              memory: 256Mi
+            limits:
+              memory: 512Mi
+          securityContext:
+            allowPrivilegeEscalation: false
+            capabilities:
+              drop: ["ALL"]
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: coolstore-cart-service-v6
+  labels:
+    app.kubernetes.io/name: coolstore-cart-service-v6
+    backstage.io/kubernetes-id: coolstore-cart-service-v6
+spec:
+  selector:
+    app.kubernetes.io/name: coolstore-cart-service-v6
+  ports:
+    - name: http
+      port: 8080
+      targetPort: http
+      protocol: TCP
+---
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: coolstore-cart-service-v6
+  labels:
+    app.kubernetes.io/name: coolstore-cart-service-v6
+    backstage.io/kubernetes-id: coolstore-cart-service-v6
+spec:
+  to:
+    kind: Service
+    name: coolstore-cart-service-v6
+  port:
+    targetPort: http
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Redirect
