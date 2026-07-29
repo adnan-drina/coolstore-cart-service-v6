@@ -16,3 +16,7 @@ Appended by the Hermes orchestrator after every task (see
 | T-009 | rewrite | 1 | complete | src/main/java/com/demo/model/ShoppingCart.java |
 | T-010 | rewrite | 1 | complete (already satisfied) | (Quarkus BOM provides removed JavaEE modules) |
 | T-011 | rewrite | 1 | complete | src/main/resources/application.properties |
+| T-012 | rewrite | 1 | complete (already satisfied) | (quarkus-junit5 dependency already present in pom.xml) |
+| T-013 | rewrite | 1 | complete | migration.yaml (CDI conversion strategy documented) |
+| T-014 | rewrite | 1 | complete | pom.xml (quarkus-smallrye-metrics added), migration.yaml (metrics strategy) |
+| T-015 | rewrite | 1 | complete | migration.yaml (JAX-RS conversion strategy documented) |
