@@ -11,7 +11,7 @@ public class Product implements Serializable {
 	private double price;
 	
 	public Product() {
-		
+		// Default constructor required for serialization and framework usage
 	}
 	
 	public Product(String itemId, String name, String desc, double price) {

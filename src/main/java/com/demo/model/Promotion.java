@@ -7,7 +7,7 @@ public class Promotion {
 	private double percentOff;
 
 	public Promotion() {
-		
+		// Default constructor required for serialization and framework usage
 	}
 	
 	public Promotion(String itemId, double percentOff) {

@@ -23,6 +23,7 @@ public class ShoppingCart implements Serializable {
 	private List<ShoppingCartItem> shoppingCartItemList = new ArrayList<>();
 
 	public ShoppingCart() {
+		// Default constructor required for serialization and framework usage
 	}
 
 	public ShoppingCart(String cartId) {
