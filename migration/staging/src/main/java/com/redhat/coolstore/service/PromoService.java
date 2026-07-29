@@ -22,14 +22,14 @@ public class PromoService implements Serializable {
     private Set<Promotion> promotionSet = null;
 
     public PromoService() {
-        promotionSet = new HashSet<Promotion>();
+        promotionSet = new HashSet<>();
         // Coolstore seed item also used by inventory/catalog demos
         promotionSet.add(new Promotion("329299", .25));
     }
 
     public void applyCartItemPromotions(ShoppingCart shoppingCart) {
-        if (shoppingCart != null && shoppingCart.getShoppingCartItemList().size() > 0) {
-            Map<String, Promotion> promoMap = new HashMap<String, Promotion>();
+        if (shoppingCart != null && !shoppingCart.getShoppingCartItemList().isEmpty()) {
+            Map<String, Promotion> promoMap = new HashMap<>();
             for (Promotion promo : getPromotions()) {
                 promoMap.put(promo.getItemId(), promo);
             }
@@ -57,16 +57,16 @@ public class PromoService implements Serializable {
 
     public Set<Promotion> getPromotions() {
         if (promotionSet == null) {
-            promotionSet = new HashSet<Promotion>();
+            promotionSet = new HashSet<>();
         }
-        return new HashSet<Promotion>(promotionSet);
+        return new HashSet<>(promotionSet);
     }
 
     public void setPromotions(Set<Promotion> promotionSet) {
         if (promotionSet != null) {
-            this.promotionSet = new HashSet<Promotion>(promotionSet);
+            this.promotionSet = new HashSet<>(promotionSet);
         } else {
-            this.promotionSet = new HashSet<Promotion>();
+            this.promotionSet = new HashSet<>();
         }
     }
 

@@ -20,7 +20,7 @@ public class ShoppingCart implements Serializable {
 
 	private String cartId;
 			
-	private List<ShoppingCartItem> shoppingCartItemList = new ArrayList<ShoppingCartItem>();
+	private List<ShoppingCartItem> shoppingCartItemList = new ArrayList<>();
 
 	public ShoppingCart() {
 	}
@@ -46,7 +46,7 @@ public class ShoppingCart implements Serializable {
 	}
 
 	public void resetShoppingCartItemList() {
-		shoppingCartItemList = new ArrayList<ShoppingCartItem>();
+		shoppingCartItemList = new ArrayList<>();
   }
 
 	public void addShoppingCartItem(ShoppingCartItem sci) {
