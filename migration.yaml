@@ -43,6 +43,9 @@ preserve:
   # CDI conversion strategy: Native Quarkus CDI will be used instead of Spring DI
   # Constructor injection pattern will be implemented in S03 for service classes
   # No spring-di extension will be used in the target application
+  # Metrics conversion strategy: Micrometer to MicroProfile Metrics (MP Metrics)
+  # quarkus-smallrye-metrics dependency added for future S03-S04 story use
+  # Metrics annotations and instrumentation will be implemented in service conversion
 forbidden:
   - getMockProducts
   - "Fallback to mock"
