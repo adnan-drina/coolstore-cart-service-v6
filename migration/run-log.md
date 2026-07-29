@@ -51,3 +51,8 @@ Appended by the Hermes orchestrator after every task (see
 
 ### Final Status
 Migration M1-M4 execution complete. Significant findings resolution achieved through OpenRewrite automation and targeted worker fixes. Remaining findings classified for future stories. Factory preflight green - ready for supervised ship.
+
+T-001: rewrite: 1 attempt: SUCCESS: ShoppingCartService.java interface preserved
+T-002: rewrite: 1 attempt: SUCCESS: CatalogService.java converted to REST client; pom.xml updated with REST client dependency  
+T-003: rewrite: 1 attempt: SUCCESS: AcceptanceEndpoint.java created with placeholder response
+
