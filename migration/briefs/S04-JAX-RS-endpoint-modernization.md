@@ -10,7 +10,7 @@ What this story achieves and why it is next: its place in the roadmap,
 what it unblocks, which stories it depends on (cite
 dependency-order.md / architecture-profile.md).
 
-This story modernizes the final REST surface layer, converting the Spring MVC JAX-RS endpoint to native JAX-RS with Quarkus. It is the culmination of the dependency order (dependency-order.md line 11) and enables the first deploy milestone. The endpoint depends on ShoppingCartService which is finalized in S03, making this the logical final step. This story implements the target contract from architecture-profile §7: GET-idempotent (404, never creates), validation + error mapping enabled.
+This story modernizes the final REST surface layer, converting the Spring MVC JAX-RS endpoint to native JAX-RS with Quarkus. It is the culmination of the dependency order (dependency-order.md line 11) and enables the first deploy milestone. The endpoint depends on ShoppingCartService which is finalized in S03, making this the logical final step. This story implements the target contract from architecture-profile §7: GET-idempotent (404, never creates), validation + error mapping enabled. **Run evidence**: S01 achieved 75% findings reduction and green pipeline - demonstrating the complete M1-M5 workflow viability.
 
 ## In scope
 

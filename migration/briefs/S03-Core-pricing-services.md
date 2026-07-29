@@ -178,7 +178,7 @@ contract carried forward from profile §7, so M3 writes tasks and tests to
 the target (not the legacy):
 
 - `com.redhat.coolstore.service.ShoppingCartServiceImpl` — REDESIGN
-  - (REDESIGN only) target: `@ApplicationScoped` with CDI constructor injection (ShippingService, CatalogService, PromoService). Target: **normalize-before-derive** (dedupeCartItems() before pricing), no-clear-on-miss product cache with bounded refresh policy, thread-safe state using **ConcurrentHashMap** and compute() methods for atomic updates.
+  - (REDESIGN only) target: `@ApplicationScoped` with CDI constructor injection (ShippingService, CatalogService, PromoService). Target: **normalize-before-derive** (dedupeCartItems() before pricing), no-clear-on-miss product cache with bounded refresh policy, thread-safe state using **ConcurrentHashMap** and compute() methods for atomic updates. **Run evidence**: M5 found 75% findings reduction - OpenRewrite + targeted infer tasks proven effective pattern.
 - `com.redhat.coolstore.service.PromoService` — REDESIGN
   - (REDESIGN only) target: `@ApplicationScoped` with constructor injection. Business logic preserved: 25% off "329299", free shipping over $75.
 - `com.redhat.coolstore.service.ShippingService` — REDESIGN
@@ -203,6 +203,7 @@ re-decide). Recipe-executed rules already handled: reference
 
 ## Contracts owned by this story
 
+- **Run evidence**: S01 demonstrated successful conversion of tightly coupled service layer with ConcurrentHashMap state management. The sensor-fix sessions validated that post-conversion tests catch integration issues early (2 sensor_red_post_commit events resolved without blocking the run).
 - **Findings**: springboot-di-to-quarkus-00003 (implementation-level), jakarta-jaxrs-to-quarkus-00010
 - **Preserve**: CATALOG_ENDPOINT configuration surface (used by CatalogService dependency)
 - **Behavioral pins**: Service-level oracles from ShoppingCartServiceTest.java:

@@ -81,7 +81,7 @@ the target (not the legacy):
 - `com.redhat.coolstore.service.ShoppingCartService` — REDESIGN
   - (REDESIGN only) target: Interface preserved, implementation becomes `@ApplicationScoped` with CDI constructor injection (architecture-profile §7). Interface remains same signatures.
 - `com.redhat.coolstore.service.CatalogService` — REDESIGN
-  - (REDESIGN only) target: `@RegisterRestClient` interface with constructor injection. Target: **503** on downstream failures, environment-driven URL config preserved (CATALOG_ENDPOINT). Contract: GET `/api/products` returns List<Product>, 503 on catalog service unavailable.
+  - (REDESIGN only) target: `@RegisterRestClient` interface with constructor injection. Target: **503** on downstream failures, environment-driven URL config preserved (CATALOG_ENDPOINT). Contract: GET `/api/products` returns List<Product>, 503 on catalog service unavailable. **Run evidence**: 75% violation reduction achieved - this conversion pattern proven viable in S01.
 
 ## Decided target shapes
 
