@@ -7,6 +7,12 @@
   <artifactId>quarkus-migration-app</artifactId>
   <version>1.0.0-SNAPSHOT</version>
 
+  <parent>
+    <groupId>com.redhat.quarkus.platform</groupId>
+    <artifactId>quarkus-bom</artifactId>
+    <version>3.27.3.SP1-redhat-00002</version>
+  </parent>
+
   <properties>
     <compiler-plugin.version>3.14.0</compiler-plugin.version>
     <maven.compiler.release>21</maven.compiler.release>
@@ -41,18 +47,6 @@
       <snapshots><enabled>false</enabled></snapshots>
     </pluginRepository>
   </pluginRepositories>
-
-  <dependencyManagement>
-    <dependencies>
-      <dependency>
-        <groupId>${quarkus.platform.group-id}</groupId>
-        <artifactId>${quarkus.platform.artifact-id}</artifactId>
-        <version>${quarkus.platform.version}</version>
-        <type>pom</type>
-        <scope>import</scope>
-      </dependency>
-    </dependencies>
-  </dependencyManagement>
 
   <dependencies>
     <dependency>
@@ -114,6 +108,18 @@
           </systemPropertyVariables>
         </configuration>
       </plugin>
+      <plugin>
+        <artifactId>maven-failsafe-plugin</artifactId>
+        <version>${surefire-plugin.version}</version>
+        <executions>
+          <execution>
+            <goals>
+              <goal>integration-test</goal>
+              <goal>verify</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
       <!-- Coverage for plain JUnit tests (quarkus-jacoco only instruments
            @QuarkusTest runs). report binds to prepare-package so it fires
            under the factory's `mvn package` as well as `mvn verify`. -->
@@ -138,4 +144,13 @@
       </plugin>
     </plugins>
   </build>
+
+  <profiles>
+    <profile>
+      <id>native</id>
+      <properties>
+        <quarkus.package.type>native</quarkus.package.type>
+      </properties>
+    </profile>
+  </profiles>
 </project>
