@@ -1,0 +1,11 @@
+epoch,stage,attempt,class,action
+1785346057,batch-verify,0,sensor_red_post_commit,verify
+1785346278,batch-verify,0,style_autofix,partial
+1785347616,T-010,0,already_complete,absent:Remove
+1785347857,batch-verify,0,sensor_red_post_commit,verify
+1785348450,T-016,0,already_complete,CATALOG_ENDPOINT
+1785348989,T-017,1,success,commit
+1785348996,T-018,0,already_complete,CATALOG_ENDPOINT
+1785349365,m5-evaluate,1,success,commit
+1785349539,m5-ship,0,pipeline_succeeded,coolstore-cart-service-v6-push-jd5nz
+1785349539,m5-ship,0,story_gate_pass,non-deploy story
