@@ -10,4 +10,5 @@ Appended by the Hermes orchestrator after every task (see
 || T-003 | rewrite | 1 | complete (already satisfied) | (no changes needed) |
 || T-004 | rewrite | 1 | complete (already satisfied) | (no changes needed) |
 || T-005 | rewrite | 1 | complete (already satisfied) | (no changes needed) |
+|| T-006 | rewrite | 1 | complete | src/main/java/com/demo/model/Product.java |
 
