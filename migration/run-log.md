@@ -3,5 +3,10 @@
 Appended by the Hermes orchestrator after every task (see
 `.hermes/skills/migration-harness/`). One line per task.
 
-| Task | Class | Attempts | Result | Files |
-|---|---|---|---|---|
+|| Task | Class | Attempts | Result | Files |
+||---|---|---|---|---|
+|| T-001 | rewrite | 1 | complete | pom.xml |
+|| T-002 | rewrite | 1 | complete (already satisfied) | (no changes needed) |
+|| T-003 | rewrite | 1 | complete (already satisfied) | (no changes needed) |
+|| T-004 | rewrite | 1 | complete (already satisfied) | (no changes needed) |
+
