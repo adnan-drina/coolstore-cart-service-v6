@@ -9,4 +9,5 @@ Appended by the Hermes orchestrator after every task (see
 || T-002 | rewrite | 1 | complete (already satisfied) | (no changes needed) |
 || T-003 | rewrite | 1 | complete (already satisfied) | (no changes needed) |
 || T-004 | rewrite | 1 | complete (already satisfied) | (no changes needed) |
+|| T-005 | rewrite | 1 | complete (already satisfied) | (no changes needed) |
 
